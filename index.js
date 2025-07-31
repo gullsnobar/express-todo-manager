@@ -150,9 +150,9 @@ app.post('/update-task/:id', function(req, res) {
     const taskContent = `${title}\n${description || ''}`;
     
     fs.writeFile(filePath, taskContent, function(err) {
-        if (err) {
-            console.error('Error updating task:', err);
-            return res.redirect(`/edit-task/${taskId}?error=Failed to update task`);
+    if (err) {
+    console.error('Error updating task:', err);
+    return res.redirect(`/edit-task/${taskId}?error=Failed to update task`);
         }
         
         console.log(`Task updated: ${taskId}`);
